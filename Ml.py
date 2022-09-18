@@ -32,7 +32,7 @@ First Paragraph:"""
     presence_penalty=0,
     stop_sequences=["--"],
     return_likelihoods='NONE')
-    print('Prediction: {}'.format(response.generations[0].text))
+    return('Prediction: {}'.format(response.generations[0].text))
     
 def freestyle_bot(first_line):
     
@@ -90,7 +90,7 @@ Hook:"""
         presence_penalty=0,
         stop_sequences=["--"],
         return_likelihoods='NONE')
-    print('Prediction: {}'.format(response.generations[0].text))
+    return('Prediction: {}'.format(response.generations[0].text))
 
 
 
@@ -132,7 +132,7 @@ TLDR:"""
         presence_penalty=0,
         stop_sequences=["--"],
         return_likelihoods='NONE')
-    print('Prediction: {}'.format(response.generations[0].text))
+    return('Prediction: {}'.format(response.generations[0].text))
 #freestyle_bot("Life is missery, I am sad, why do I love you so much")
 #summarizer("To be fair, you have to have a very high IQ to understand Rick and Morty. The humor is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer's head. There's also Rick's nihilistic outlook, which is deftly woven into his characterisation - his personal philosophy draws heavily fromNarodnaya Volya literature, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of these jokes, to realize that they're not just funny- they say something deep about LIFE.")
 #blog_post("elon musk","children","sarcastic")
