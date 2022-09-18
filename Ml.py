@@ -4,12 +4,22 @@ co = cohere.Client('tafccigkrHkGNU4KGeIx4Bk0xqjWQDe1xQZIGjg3')
 
 
 def blog_post(title,audience,tone):
-    prompt='This program will generate an introductory paragraph to a blog post given a blog title, audience, and tone of voice.\n--\nBlog Title: Best Activities in Toronto\nAudience: Millennials\nTone of Voice: Lighthearted\nFirst Paragraph: Looking for fun things to do in Toronto? When it comes to exploring Canada\'s largest city, there\'s an ever-evolving set of activities to choose from. Whether you\'re looking to visit a local museum or sample the city\'s varied cuisine, there is plenty to fill any itinerary. In this blog post, I\'ll share some of my favorite recommendations\n--\nBlog Title: Mastering Dynamic Programming\nAudience: Developers\nTone: Informative\nFirst Paragraph: In this piece, we\'ll help you understand the fundamentals of dynamic programming, and when to apply this optimization technique. We\'ll break down bottom-up and top-down approaches to solve dynamic programming problems.\n-',
-    print(prompt)
-    prompt+='-\nBlog Title: '+title+'\n',
-    prompt+='Audience: '+audience+'\n',
-    prompt+='Tone of Voice: '+tone+'\n',
-    prompt+="First Paragraph:",
+    prompt=f"""This program will generate an introductory paragraph to a blog post given a blog title, audience, and tone of voice.
+--
+Blog Title: Best Activities in Toronto
+Audience: Millennials
+Tone of Voice: Lighthearted
+First Paragraph: Looking for fun things to do in Toronto? When it comes to exploring Canada's largest city, there's an ever-evolving set of activities to choose from. Whether you're looking to visit a local museum or sample the city's varied cuisine, there is plenty to fill any itinerary. In this blog post, I'll share some of my favorite recommendations
+--
+Blog Title: Mastering Dynamic Programming
+Audience: Developers
+Tone: Informative
+First Paragraph: In this piece, we'll help you understand the fundamentals of dynamic programming, and when to apply this optimization technique. We'll break down bottom-up and top-down approaches to solve dynamic programming problems.
+-
+Blog Title: {title}
+Audience: {audience}
+Tone of Voice: {tone}
+First Paragraph:"""
     response = co.generate(
     model='xlarge',
     prompt=prompt,
@@ -22,7 +32,7 @@ def blog_post(title,audience,tone):
     presence_penalty=0,
     stop_sequences=["--"],
     return_likelihoods='NONE')
-    #print('Prediction: {}'.format(response.generations[0].text))
+    return('Prediction: {}'.format(response.generations[0].text))
     
 def freestyle_bot(first_line):
     
@@ -80,7 +90,7 @@ Hook:"""
         presence_penalty=0,
         stop_sequences=["--"],
         return_likelihoods='NONE')
-    print('Prediction: {}'.format(response.generations[0].text))
+    return('Prediction: {}'.format(response.generations[0].text))
 
 
 
@@ -122,7 +132,7 @@ TLDR:"""
         presence_penalty=0,
         stop_sequences=["--"],
         return_likelihoods='NONE')
-    print('Prediction: {}'.format(response.generations[0].text))
+    return('Prediction: {}'.format(response.generations[0].text))
 #freestyle_bot("Life is missery, I am sad, why do I love you so much")
 #summarizer("To be fair, you have to have a very high IQ to understand Rick and Morty. The humor is extremely subtle, and without a solid grasp of theoretical physics most of the jokes will go over a typical viewer's head. There's also Rick's nihilistic outlook, which is deftly woven into his characterisation - his personal philosophy draws heavily fromNarodnaya Volya literature, for instance. The fans understand this stuff; they have the intellectual capacity to truly appreciate the depths of these jokes, to realize that they're not just funny- they say something deep about LIFE.")
 #blog_post("elon musk","children","sarcastic")
