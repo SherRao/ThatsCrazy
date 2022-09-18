@@ -87,7 +87,7 @@ def verify_input(input: object):
     thinkPrompt = typer.style("❓  We think you said: " + input["result"], fg=typer.colors.CYAN, bold=True);
     typer.echo(thinkPrompt);
 
-    promptText = typer.style("❓  Is this correct? (y/n)", fg=typer.colors.CYAN, bold=True);
+    promptText = typer.style("❓  Is this correct? (y/n): ", fg=typer.colors.CYAN, bold=True);
     result = typer.prompt(promptText, default="y").lower();
     return result == "y";
 
