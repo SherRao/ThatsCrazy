@@ -1,6 +1,6 @@
 import speech_recognition as sr
 import pyttsx3
-import win32api
+# import win32api
 
 recog = sr.Recognizer()
 engine = pyttsx3.init()
@@ -20,7 +20,6 @@ def listen():
     except sr.RequestError as e:
         return {"error": "Could not request results from Google Speech Recognition service; {0}".format(e)}
 
-
 def speak(text):
     # # Language in which you want to convert
     # language = 'en'
@@ -37,12 +36,12 @@ def speak(text):
     # getting details of current speaking rate
     # rate = engine.getProperty('rate')
     # print(rate)  # printing current voice rate
-    engine.setProperty('rate', 125)
+    engine.setProperty('rate', 150);
 
     # voices = engine.getProperty('voices')  # getting details of current voice
     # print(voices)
     # engine.setProperty('voice', voices[0].id)  #changing index, changes voices. o for male
-    engine.setProperty('voice', engine.getProperty('voices')[1].id)
+    engine.setProperty('voice', engine.getProperty('voices')[0].id)
 
     # getting to know current volume level (min=0 and max=1)
     # volume = engine.getProperty('volume')
@@ -50,6 +49,3 @@ def speak(text):
 
     engine.say(text)
     engine.runAndWait()
-
-
-speak("Mubin we killed this. We're winning 2 grand")
