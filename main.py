@@ -1,5 +1,4 @@
 import typer;
-import rich;
 import ml;
 import speech as sr;
 cli = typer.Typer();
