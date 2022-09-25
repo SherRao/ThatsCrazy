@@ -22,4 +22,4 @@ OR
 ```python3 main.py --help```
 
 ## Our Submission
-This project was made for HackTheNorth 2022 - you can view our (Devpost submission here)[https://devpost.com/software/get-to-the-point]
+This project was made for HackTheNorth 2022 - you can view our [Devpost submission here](https://devpost.com/software/get-to-the-point)
