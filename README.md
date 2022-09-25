@@ -1,3 +1,7 @@
+<p align="center">
+<img src="assets/logo.png" width="50%">
+</p>
+
 # That's Crazy!
 CLI program using speech recognition and NLP to summarize text, generate freestyle song lyrics, and create blog posts, THAT'S CRAZY!
 
